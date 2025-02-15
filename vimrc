@@ -1,3 +1,12 @@
+" Plugins
+packadd breezy
+packadd killersheep
+packadd rainbow
+packadd vim-airline
+packadd vim-startify
+packadd nerdcommenter
+packadd coc.nvim
+
 " Options
 
 syntax on

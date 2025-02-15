@@ -1,0 +1,22 @@
+[submodule "pack/feiding/opt/breezy"]
+	path = pack/feiding/opt/breezy
+	url = git@github.com:fneu/breezy
+[submodule "pack/feiding/opt/killersheep"]
+	path = pack/feiding/opt/killersheep
+	url = git@github.com:vim/killersheep.git
+[submodule "pack/feiding/opt/rainbow"]
+	path = pack/feiding/opt/rainbow
+	url = git@github.com:luochen1990/rainbow
+[submodule "pack/feiding/opt/vim-airline"]
+	path = pack/feiding/opt/vim-airline
+	url = git@github.com:vim-airline/vim-airline
+[submodule "pack/feiding/opt/vim-startify"]
+	path = pack/feiding/opt/vim-startify
+	url = git@github.com:mhinz/vim-startify
+[submodule "pack/feiding/opt/nerdcommenter"]
+	path = pack/feiding/opt/nerdcommenter
+	url = git@github.com:preservim/nerdcommenter
+[submodule "pack/feiding/opt/coc.nvim"]
+	path = pack/feiding/opt/coc.nvim
+	url = git@github.com:neoclide/coc.nvim
+	branch = release
