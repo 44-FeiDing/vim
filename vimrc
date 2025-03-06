@@ -1,11 +1,22 @@
 " Plugins
-packadd breezy
-packadd killersheep
-packadd rainbow
-packadd vim-airline
-packadd vim-startify
-packadd nerdcommenter
-packadd coc.nvim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.config/vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+    Plug 'tomasr/molokai'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'vim/killersheep'
+    Plug 'preservim/nerdcommenter'
+    Plug 'luochen1990/rainbow'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'mhinz/vim-startify'
+call plug#end()
+
+
 
 " Options
 
@@ -27,9 +38,8 @@ set encoding=utf-8
 set mouse=a
 set backspace=indent,eol,start
 set completeopt-=preview
-set guifont=FiraCode\ Nerd\ Font\ 10
+set guifont=FiraCode\ Nerd\ Font\ Mono\ 10
 set guiligatures=!\"#$%&()*+-./:<=>?@[]^_{\|~
-set ambiwidth=double
 set t_Co=256
 set ignorecase
 set smartcase
@@ -41,24 +51,27 @@ set backup
 set writebackup
 set updatetime=100
 set shortmess+=c
-colorscheme breezy
+colorscheme molokai
 
 
 
 " Keymaps
-let mapleader = ","
+let g:mapleader = " "
+let g:maplocalleader = " "
 inoremap jk <Esc>
-nnoremap <leader>t :belowright terminal<CR>
+nnoremap <leader>t <CMD>belowright terminal<CR>
 vnoremap < <gv
 vnoremap > >gv
-nnoremap <C-Up> :resize -2<CR>
-nnoremap <C-Down> :resize +2<CR>
-nnoremap <C-Left> :vertical resize -2<CR>
-nnoremap <C-Right> :vertical resize +2<CR>
+nnoremap <C-Up> <CMD>resize -2<CR>
+nnoremap <C-Down> <CMD>resize +2<CR>
+nnoremap <C-Left> <CMD>vertical resize -2<CR>
+nnoremap <C-Right> <CMD>vertical resize +2<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <leader>e <CMD>CocCommand explorer<CR>
+nnoremap <ESC> <CMD>nohlsearch<CR>
 
 
 " Rainbow
@@ -66,7 +79,7 @@ let g:rainbow_active = 1
 
 
 " Airline
-let g:airline_theme = 'breezy'
+let g:airline_theme = 'molokai'
 let g:airline_powerline_fonts = 1
 
 
