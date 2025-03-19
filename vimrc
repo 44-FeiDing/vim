@@ -91,7 +91,6 @@ let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-pairs',
     \ 'coc-clangd',
-    \ 'coc-snippets'
   \ ]
 
 function! CheckBackspace() abort
