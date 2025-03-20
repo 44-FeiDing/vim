@@ -33,7 +33,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set cursorline
-set relativenumber
 set encoding=utf-8
 set mouse=a
 set backspace=indent,eol,start
@@ -98,10 +97,10 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use `<leader>-` and `<leader>=` to navigate diagnostics
+" Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-nmap <silent> <leader>- <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>= <Plug>(coc-diagnostic-next)
+nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
+nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation
 nmap <silent><nowait> gd <Plug>(coc-definition)
