@@ -43,7 +43,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 "vim-plug
-call plug#begin('~/.vim/plugged')
+call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'LunarWatcher/auto-pairs'
     Plug 'ycm-core/YouCompleteMe', { 'do': './install --clangd-completer' }
