@@ -36,7 +36,7 @@ nnoremap <C-Right> :vertical resize +2<CR>
 set scrolloff=3
 
 
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.config/vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
     silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -46,7 +46,7 @@ endif
 call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'LunarWatcher/auto-pairs'
-    Plug 'ycm-core/YouCompleteMe', { 'do': './install --clangd-completer' }
+    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -72,22 +72,22 @@ let g:AutoPairsMultilineClose = 0
 
 
 "ycm
-"let g:ycm_clangd_binary_path = exepath("clangd15")
 let g:ycm_semantic_triggers =  {
             \   'c,cpp,objc': [ 're!\w{2}', '_' ],
             \ }
 let g:ycm_error_symbol = ''
 let g:ycm_warning_symbol = ''
-let g:ycm_clangd_args = [ '--header-insertion=never' ]
-nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename 
+nnoremap gd :YcmCompleter GoToDefinition<CR>
+nnoremap gr :YcmCompleter GoToReferences<CR>
+nnoremap gy :YcmCompleter GoToType<CR>
+nnoremap gi :YcmCompleter GoToImplementation<CR>
+nnoremap <leader>rn :YcmCompleter RefactorRename 
 
 "rainbow
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 
 "airline
-"Should install powerline-fonts at the package manager first
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 let g:bufferline_echo = 0
