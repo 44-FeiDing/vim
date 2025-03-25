@@ -1,4 +1,6 @@
 {
+    "suggest.noselect": true,
+
     "explorer.icon.enableNerdfont": true,
     "explorer.toggle": true,
     "explorer.file.showHiddenFiles": true,
