@@ -35,7 +35,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set cursorline
 set encoding=utf-8
 set mouse=a
 set backspace=indent,eol,start
