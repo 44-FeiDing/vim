@@ -17,6 +17,7 @@ call plug#begin()
     Plug 'lambdalisue/vim-suda'
     Plug 'Yggdroot/indentLine'
     Plug 'github/copilot.vim'
+    Plug 'puremourning/vimspector'
 call plug#end()
 
 
@@ -152,6 +153,10 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 
-"Copilot
+" Copilot
 inoremap <silent><script><expr> <A-y> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'vscode-bash-debug' ]
