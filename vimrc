@@ -16,13 +16,33 @@ call plug#begin()
     Plug 'mhinz/vim-startify'
     Plug 'lambdalisue/vim-suda'
     Plug 'Yggdroot/indentLine'
+    Plug 'tpope/vim-surround'
     Plug 'github/copilot.vim'
-    Plug 'puremourning/vimspector'
+    Plug 'puremourning/vimspector', { 'do': './install_gadget.py --enable-bash --enable-python --enable-cpp' }
+    Plug 'igankevich/mesonic'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
 
 " Options
+if has("gui_running")
+    set termguicolors
+    set guifont=FiraCode\ Nerd\ Font\ Mono\ 10
+    set guiligatures=!\"#$%&()*+-./:<=>?@[]^_{\|~
+else
+    set t_Co=256
+    if has("autocmd")
+        au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+        au InsertEnter,InsertChange *
+      \ if v:insertmode == 'i' |
+      \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+      \ elseif v:insertmode == 'r' |
+      \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+      \ endif
+        au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+    endif
+endif
 
 syntax on
 set nu
@@ -40,9 +60,6 @@ set encoding=utf-8
 set mouse=a
 set backspace=indent,eol,start
 set completeopt-=preview
-set guifont=FiraCode\ Nerd\ Font\ Mono\ 10
-set guiligatures=!\"#$%&()*+-./:<=>?@[]^_{\|~
-set t_Co=256
 set ignorecase
 set smartcase
 set clipboard=unnamedplus
@@ -56,12 +73,11 @@ set shortmess+=c
 colorscheme molokai
 
 
-
 " Keymaps
 let g:mapleader = " "
 let g:maplocalleader = " "
 inoremap jk <Esc>
-nnoremap <leader>t <CMD>belowright terminal<CR>
+nnoremap <leader>t <CMD>tab terminal<CR>
 vnoremap < <gv
 vnoremap > >gv
 nnoremap <C-Up> <CMD>resize -2<CR>
@@ -78,6 +94,16 @@ nnoremap <ESC> <CMD>nohlsearch<CR>
 
 " Rainbow
 let g:rainbow_active = 1
+let g:rainbow_conf = {
+    \ 'separately': {
+        \ 'nerdtree': 0,
+        \ 'startify': 0,
+        \ 'gitcommit': 0,
+        \ 'vimwiki': 0,
+        \ 'markdown': 0,
+        \ 'help': 0,
+    \ },
+    \ }
 
 
 " Airline
