@@ -21,6 +21,7 @@ call plug#begin()
     Plug 'puremourning/vimspector', { 'do': './install_gadget.py --enable-bash --enable-python --enable-cpp' }
     Plug 'igankevich/mesonic'
     Plug 'tpope/vim-fugitive'
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
