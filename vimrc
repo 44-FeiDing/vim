@@ -1,3 +1,7 @@
+" sudo dnf copr enable jcwasmx86/Swift-MesonLSP 
+" sudo dnf install mesonlsp
+
+
 " Plugins
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.config/vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -123,6 +127,7 @@ let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-git',
     \ 'coc-sh',
+    \ 'coc-lua',
     \ 'coc-webview',
     \ 'coc-markdown-preview-enhanced'
   \ ]

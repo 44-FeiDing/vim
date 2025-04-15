@@ -4,5 +4,7 @@
     "explorer.icon.enableNerdfont": true,
     "explorer.toggle": true,
     "explorer.file.showHiddenFiles": true,
-    "explorer.quitOnOpen": true
+    "explorer.quitOnOpen": true,
+
+    "git.enableGutters": true
 }
