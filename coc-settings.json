@@ -6,5 +6,6 @@
     "explorer.file.showHiddenFiles": true,
     "explorer.quitOnOpen": true,
 
-    "git.enableGutters": true
+    "git.enableGutters": true,
+    "mesonbuild.downloadLanguageServer": true,
 }
