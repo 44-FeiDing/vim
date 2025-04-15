@@ -128,6 +128,7 @@ let g:coc_global_extensions = [
     \ 'coc-git',
     \ 'coc-sh',
     \ 'coc-lua',
+    \ 'coc-meson',
     \ 'coc-webview',
     \ 'coc-markdown-preview-enhanced'
   \ ]
