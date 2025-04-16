@@ -1,11 +1,13 @@
 {
     "suggest.noselect": true,
-
     "explorer.icon.enableNerdfont": true,
     "explorer.toggle": true,
     "explorer.file.showHiddenFiles": true,
     "explorer.quitOnOpen": true,
-
     "git.enableGutters": true,
     "mesonbuild.downloadLanguageServer": true,
+    "mesonbuild.formatting.enabled": true,
+    "mesonbuild.configureOnOpen": true,
+    "python.formatting.provider": "black",
+    "coc.preferences.formatOnSave": true
 }

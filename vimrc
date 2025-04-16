@@ -1,7 +1,3 @@
-" sudo dnf copr enable jcwasmx86/Swift-MesonLSP 
-" sudo dnf install mesonlsp
-
-
 " Plugins
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.config/vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -114,6 +110,8 @@ let g:rainbow_conf = {
 " Airline
 let g:airline_theme = 'molokai'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#coc#show_coc_status = 1
 
 
 " Coc
@@ -164,6 +162,7 @@ nmap <silent><nowait> gd <Plug>(coc-definition)
 nmap <silent><nowait> gy <Plug>(coc-type-definition)
 nmap <silent><nowait> gi <Plug>(coc-implementation)
 nmap <silent><nowait> gr <Plug>(coc-references)
+nmap <silent><nowait> gD <Plug>(coc-declaration)
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
 function! ShowDocumentation()
@@ -192,4 +191,3 @@ let g:copilot_no_tab_map = v:true
 
 " Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'vscode-bash-debug' ]
